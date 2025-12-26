@@ -2,4 +2,5 @@
 
 Check out SegFault - his channel makes complex security topics actually understandable.
 
-YouTube Channel · GitHub: https://github.com/soulaimane213
+YouTube Channel: https://youtube.com/@Zero2Segfault
+GitHub: https://github.com/soulaimane213
