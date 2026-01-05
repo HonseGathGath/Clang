@@ -1,0 +1,1 @@
+Result<_, fn(String) -> graceful_error_handling_2::ParsePercentageError {graceful_error_handling_2::ParsePercentageError::InvalidInput}>
