@@ -1,0 +1,65 @@
+pub trait Plugin {
+    fn name(&self) -> &str;
+    fn execute(&self);
+}
+
+pub struct PluginManager {
+    plugins: Vec<Box<dyn Plugin>>,
+}
+q
+
+// 3. Implement the PluginManager
+impl PluginManager {
+    fn new() -> Self {
+        PluginManager {
+            plugins: Vec::new(),
+        }
+    }
+
+    fn add_plugin(&mut self, plugin: Box<dyn Plugin>) {
+        if let Some(_) = self.plugins.iter().find(|p| p.name() == plugin.name()) {
+            panic!("Plugin with name {} already exists", plugin.name());
+        } else {
+            self.plugins.push(plugin)
+        };
+    }
+
+    fn remove_plugin(&mut self, name: &str) -> Box<dyn Plugin> {
+        if let Some(pos) = self.plugins.iter().position(|p| p.name() == name) {
+            self.plugins.remove(pos)
+        } else {
+            unimplemented!("no");
+        }
+    }
+
+    fn execute_all(&self) {
+        for plugin in &self.plugins {
+            plugin.execute();
+        }
+    }
+}
+
+// Example usage
+pub struct MyPlugin;
+
+impl Plugin for MyPlugin {
+    fn name(&self) -> &str {
+        "MyPlugin"
+    }
+    fn execute(&self) {
+        println!("Executing MyPlugin");
+    }
+}
+
+impl MyPlugin {
+    fn new() -> Self {
+        Self
+    }
+}
+
+pub fn main() {
+    let mut manager = PluginManager::new();
+
+    manager.add_plugin(Box::new(MyPlugin::new()));
+    manager.execute_all();
+}

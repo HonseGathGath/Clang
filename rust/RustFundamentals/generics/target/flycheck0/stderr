@@ -1,0 +1,56 @@
+   0.007170008s  INFO prepare_target{force=false package_id=generics v0.1.0 (/home/ghaith/main/dev/allang/rust/RustFundamentals/generics) target="generics"}: cargo::core::compiler::fingerprint: stale: changed "/home/ghaith/main/dev/allang/rust/RustFundamentals/generics/src/lib.rs"
+   0.007225629s  INFO prepare_target{force=false package_id=generics v0.1.0 (/home/ghaith/main/dev/allang/rust/RustFundamentals/generics) target="generics"}: cargo::core::compiler::fingerprint:           (vs) "/home/ghaith/main/dev/allang/rust/RustFundamentals/generics/target/debug/.fingerprint/generics-e7c980799fc1190e/dep-lib-generics"
+   0.007229993s  INFO prepare_target{force=false package_id=generics v0.1.0 (/home/ghaith/main/dev/allang/rust/RustFundamentals/generics) target="generics"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 1767756519, nanos: 711229974 } < FileTime { seconds: 1767756601, nanos: 982073504 }
+   0.007268741s  INFO prepare_target{force=false package_id=generics v0.1.0 (/home/ghaith/main/dev/allang/rust/RustFundamentals/generics) target="generics"}: cargo::core::compiler::fingerprint: fingerprint dirty for generics v0.1.0 (/home/ghaith/main/dev/allang/rust/RustFundamentals/generics)/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("generics", ["lib"], "/home/ghaith/main/dev/allang/rust/RustFundamentals/generics/src/lib.rs", Edition2021) }
+   0.007276174s  INFO prepare_target{force=false package_id=generics v0.1.0 (/home/ghaith/main/dev/allang/rust/RustFundamentals/generics) target="generics"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "/home/ghaith/main/dev/allang/rust/RustFundamentals/generics/target/debug/.fingerprint/generics-e7c980799fc1190e/dep-lib-generics", reference_mtime: FileTime { seconds: 1767756519, nanos: 711229974 }, stale: "/home/ghaith/main/dev/allang/rust/RustFundamentals/generics/src/lib.rs", stale_mtime: FileTime { seconds: 1767756601, nanos: 982073504 } }))
+   0.007369503s  INFO prepare_target{force=false package_id=generics v0.1.0 (/home/ghaith/main/dev/allang/rust/RustFundamentals/generics) target="generics"}: cargo::core::compiler::fingerprint: stale: changed "/home/ghaith/main/dev/allang/rust/RustFundamentals/generics/src/lib.rs"
+   0.007407055s  INFO prepare_target{force=false package_id=generics v0.1.0 (/home/ghaith/main/dev/allang/rust/RustFundamentals/generics) target="generics"}: cargo::core::compiler::fingerprint:           (vs) "/home/ghaith/main/dev/allang/rust/RustFundamentals/generics/target/debug/.fingerprint/generics-b8004e661f756848/dep-test-lib-generics"
+   0.007410625s  INFO prepare_target{force=false package_id=generics v0.1.0 (/home/ghaith/main/dev/allang/rust/RustFundamentals/generics) target="generics"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 1767756519, nanos: 711229974 } < FileTime { seconds: 1767756601, nanos: 982073504 }
+   0.007429652s  INFO prepare_target{force=false package_id=generics v0.1.0 (/home/ghaith/main/dev/allang/rust/RustFundamentals/generics) target="generics"}: cargo::core::compiler::fingerprint: fingerprint dirty for generics v0.1.0 (/home/ghaith/main/dev/allang/rust/RustFundamentals/generics)/Check { test: true }/TargetInner { name_inferred: true, ..: lib_target("generics", ["lib"], "/home/ghaith/main/dev/allang/rust/RustFundamentals/generics/src/lib.rs", Edition2021) }
+   0.007434761s  INFO prepare_target{force=false package_id=generics v0.1.0 (/home/ghaith/main/dev/allang/rust/RustFundamentals/generics) target="generics"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "/home/ghaith/main/dev/allang/rust/RustFundamentals/generics/target/debug/.fingerprint/generics-b8004e661f756848/dep-test-lib-generics", reference_mtime: FileTime { seconds: 1767756519, nanos: 711229974 }, stale: "/home/ghaith/main/dev/allang/rust/RustFundamentals/generics/src/lib.rs", stale_mtime: FileTime { seconds: 1767756601, nanos: 982073504 } }))
+   0.007506004s  INFO prepare_target{force=false package_id=generics v0.1.0 (/home/ghaith/main/dev/allang/rust/RustFundamentals/generics) target="tests"}: cargo::core::compiler::fingerprint: fingerprint error for generics v0.1.0 (/home/ghaith/main/dev/allang/rust/RustFundamentals/generics)/Check { test: true }/TargetInner { kind: "test", name: "tests", benched: false, ..: with_path("/home/ghaith/main/dev/allang/rust/RustFundamentals/generics/tests/tests.rs", Edition2021) }
+   0.007618080s  INFO prepare_target{force=false package_id=generics v0.1.0 (/home/ghaith/main/dev/allang/rust/RustFundamentals/generics) target="tests"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/ghaith/main/dev/allang/rust/RustFundamentals/generics/target/debug/.fingerprint/generics-27177f3b93b4be9a/test-integration-test-tests`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+  12: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13: std::rt::lang_start::<()>::{closure#0}
+  14: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/ops/function.rs:290:21
+  15: std::panicking::catch_unwind::do_call
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panicking.rs:589:40
+  16: std::panicking::catch_unwind
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panicking.rs:552:19
+  17: std::panic::catch_unwind
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panic.rs:359:14
+  18: std::rt::lang_start_internal::{{closure}}
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/rt.rs:175:24
+  19: std::panicking::catch_unwind::do_call
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panicking.rs:589:40
+  20: std::panicking::catch_unwind
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panicking.rs:552:19
+  21: std::panic::catch_unwind
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panic.rs:359:14
+  22: std::rt::lang_start_internal
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/rt.rs:171:5
+  23: main
+  24: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  25: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  26: <unknown>
+    Checking generics v0.1.0 (/home/ghaith/main/dev/allang/rust/RustFundamentals/generics)
